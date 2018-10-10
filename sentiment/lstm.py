@@ -6,7 +6,7 @@ from keras.layers import Dense, Embedding, LSTM, SpatialDropout1D
 from keras.utils.np_utils import to_categorical
 
 
-def build_model(data, num_classes=None, epoch=1):
+def build_model(data, num_classes=None, epoch=1, verbose=1):
     x = []
     y = []
 
@@ -31,7 +31,7 @@ def build_model(data, num_classes=None, epoch=1):
     model.add(Dense(2, activation='softmax'))
     model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
     batch_size = 32
-    model.fit(x, y, epochs=epoch, batch_size=batch_size, verbose=2)
+    model.fit(x, y, epochs=epoch, batch_size=batch_size, verbose=verbose)
 
     return tokenizer, model, x.shape[1]
 
