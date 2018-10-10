@@ -34,6 +34,3 @@ def predict(model, data):
                 else:
                     prediction[field] *= model[word][field] + K
     return prediction
-
-def main():
-    pass
