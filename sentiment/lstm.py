@@ -19,7 +19,6 @@ def build_model(data, num_classes=None, epoch=1):
     tokenizer.fit_on_texts(x)
     x = tokenizer.texts_to_sequences(x)
     x = pad_sequences(x)
-    print()
     y = to_categorical(y, num_classes=num_classes)
 
     embed_dim = 128
